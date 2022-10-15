@@ -1,0 +1,221 @@
+2022-10-04 19:24:22 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-04 19:28:52 INFO  AuthenticationFilter:75 - Login or password is too short by entering
+2022-10-04 19:29:59 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-04 19:30:11 INFO  AddNewShipCommand:64 - Ship N 169 is added
+2022-10-04 19:53:35 INFO  AuthenticationFilter:75 - Login or password is too short by entering
+2022-10-04 19:53:44 INFO  AuthenticationFilter:104 - Логін або пароль на вході занадто короткі
+2022-10-04 19:54:05 INFO  AuthenticationFilter:98 - Привіт, гість
+2022-10-04 19:54:32 INFO  AddNewUserCommand:79 - User N 0 is added
+2022-10-04 19:55:09 INFO  AddNewUserCommand:79 - User N 199 is added
+2022-10-04 19:56:00 INFO  AuthenticationFilter:91 - Привіт, користувач
+2022-10-04 19:57:14 INFO  CruiseServiceImpl:264 - No cruises for 310 days on 2022-06-04 are available
+2022-10-04 19:58:23 INFO  AddNewOrderCommand:104 - All tickets to cruise 1 are sold out
+2022-10-04 19:59:11 INFO  AddNewOrderCommand:92 - Order 135 is added
+2022-10-04 19:59:37 INFO  AuthenticationFilter:84 - Привіт, адмін
+2022-10-04 20:00:33 INFO  UpdateOrderCommand:73 - Order N 135 is updated
+2022-10-04 20:01:34 INFO  AddNewCruiseCommand:106 - Cruise can't be added because date mismatch
+2022-10-04 20:01:47 INFO  AddNewCruiseCommand:104 - Cruise 201 is added successfully
+2022-10-04 20:02:18 INFO  AddNewShipCommand:64 - Ship N 170 is added
+2022-10-04 21:48:32 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-05 00:48:49 INFO  AuthenticationFilter:69 - Hello, Guest
+2022-10-05 00:49:11 INFO  AuthenticationFilter:62 - Hello, User
+2022-10-05 00:51:53 INFO  AddNewOrderCommand:95 - Order 145 is added
+2022-10-05 00:52:18 INFO  AddNewOrderCommand:95 - Order 146 is added
+2022-10-05 00:57:38 INFO  AuthenticationFilter:62 - Hello, User
+2022-10-05 00:58:26 INFO  AddNewOrderCommand:95 - Order 147 is added
+2022-10-05 01:03:23 INFO  AddNewOrderCommand:95 - Order 148 is added
+2022-10-05 01:17:49 INFO  AuthenticationFilter:62 - Hello, User
+2022-10-05 01:18:36 INFO  AddNewOrderCommand:96 - Order 149 is added
+2022-10-05 16:02:39 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-05 16:32:40 INFO  AuthenticationFilter:62 - Hello, User
+2022-10-05 16:34:09 INFO  AddNewOrderCommand:96 - Order 168 is added
+2022-10-05 16:53:37 INFO  AuthenticationFilter:69 - Hello, Guest
+2022-10-05 16:53:44 INFO  AuthenticationFilter:62 - Hello, User
+2022-10-05 16:53:56 INFO  AddNewOrderCommand:96 - Order 169 is added
+2022-10-05 16:55:16 INFO  AddNewOrderCommand:96 - Order 170 is added
+2022-10-05 17:22:14 INFO  AuthenticationFilter:62 - Hello, User
+2022-10-05 17:22:26 INFO  AddNewOrderCommand:96 - Order 173 is added
+2022-10-05 17:26:14 INFO  AddNewOrderCommand:96 - Order 174 is added
+2022-10-05 17:27:54 INFO  AuthenticationFilter:69 - Hello, Guest
+2022-10-05 17:28:35 INFO  AddNewUserCommand:79 - User N 251 is added
+2022-10-05 18:01:16 INFO  AuthenticationFilter:69 - Hello, Guest
+2022-10-05 18:01:51 INFO  AddNewUserCommand:80 - User N 252 is added
+2022-10-05 18:03:37 INFO  AuthenticationFilter:75 - Login or password is too short by entering
+2022-10-05 18:03:55 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-05 18:04:17 INFO  AuthenticationFilter:62 - Hello, User
+2022-10-05 18:04:29 INFO  AddNewOrderCommand:96 - Order 175 is added
+2022-10-06 07:15:57 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-06 07:17:35 INFO  AddNewCruiseCommand:104 - Cruise 256 is added successfully
+2022-10-06 07:20:16 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-06 07:21:33 INFO  AddNewCruiseCommand:104 - Cruise 257 is added successfully
+2022-10-06 07:29:41 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-06 07:30:41 INFO  AddNewCruiseCommand:104 - Cruise 258 is added successfully
+2022-10-06 07:31:50 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-06 09:47:27 INFO  AddNewCruiseCommand:104 - Cruise 259 is added successfully
+2022-10-06 09:51:13 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-06 09:53:26 INFO  AddNewCruiseCommand:104 - Cruise 260 is added successfully
+2022-10-06 11:09:06 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-06 11:33:22 INFO  AddNewCruiseCommand:104 - Cruise 261 is added successfully
+2022-10-06 11:34:04 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-06 11:34:20 INFO  AddNewCruiseCommand:104 - Cruise 262 is added successfully
+2022-10-06 11:35:12 INFO  AuthenticationFilter:84 - Привіт, адмін
+2022-10-06 11:35:32 INFO  AddNewCruiseCommand:104 - Cruise 263 is added successfully
+2022-10-06 11:43:43 INFO  AuthenticationFilter:91 - Привіт, користувач
+2022-10-06 11:43:57 INFO  AddNewOrderCommand:96 - Order 176 is added
+2022-10-06 11:45:27 INFO  AuthenticationFilter:91 - Привіт, користувач
+2022-10-06 11:45:42 INFO  AuthenticationFilter:84 - Привіт, адмін
+2022-10-06 11:46:29 INFO  AddNewCruiseCommand:104 - Cruise 264 is added successfully
+2022-10-06 11:50:23 INFO  AddNewCruiseCommand:104 - Cruise 265 is added successfully
+2022-10-06 12:13:31 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-06 12:13:49 INFO  AddNewShipCommand:64 - Ship N 237 is added
+2022-10-06 12:15:29 INFO  AddNewCruiseCommand:104 - Cruise 266 is added successfully
+2022-10-06 16:44:14 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-06 16:49:02 INFO  AuthenticationFilter:62 - Hello, User
+2022-10-06 16:49:26 INFO  AddNewOrderCommand:96 - Order 177 is added
+2022-10-06 16:50:23 INFO  AuthenticationFilter:75 - Login or password is too short by entering
+2022-10-06 16:50:44 INFO  AuthenticationFilter:69 - Hello, Guest
+2022-10-06 16:50:55 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-06 16:51:19 INFO  AddNewCruiseCommand:104 - Cruise 267 is added successfully
+2022-10-06 20:25:58 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-06 20:30:42 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-06 20:41:12 INFO  AddNewCruiseCommand:104 - Cruise 268 is added successfully
+2022-10-06 20:42:10 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-06 20:45:26 INFO  AddNewCruiseCommand:107 - Cruise 269 is added successfully
+2022-10-07 00:45:06 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 00:46:52 INFO  AddNewCruiseCommand:108 - Cruise 270 is added successfully
+2022-10-07 00:49:16 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 00:51:32 INFO  AddNewCruiseCommand:108 - Cruise 271 is added successfully
+2022-10-07 02:10:30 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 09:29:07 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 09:30:12 INFO  CruiseFilter:59 - Cruise 272 is added successfully
+2022-10-07 09:41:36 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 09:42:56 INFO  CruiseFilter:59 - Cruise 273 is added successfully
+2022-10-07 09:57:16 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 09:57:49 INFO  CruiseFilter:59 - Cruise 274 is added successfully
+2022-10-07 10:11:38 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 10:12:20 INFO  CruiseFilter:60 - Cruise 275 is added successfully
+2022-10-07 10:22:20 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 10:22:54 INFO  CruiseFilter:60 - Cruise 276 is added successfully
+2022-10-07 10:25:44 INFO  CruiseFilter:60 - Cruise 277 is added successfully
+2022-10-07 10:39:57 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 10:40:50 INFO  CruiseFilter:60 - Cruise 278 is added successfully
+2022-10-07 11:01:05 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 11:01:33 INFO  CruiseFilter:60 - Cruise 279 is added successfully
+2022-10-07 11:36:40 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 17:16:20 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 17:16:33 INFO  CruiseFilter:61 - Cruise 280 is added successfully
+2022-10-07 17:18:52 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 17:19:04 INFO  CruiseFilter:61 - Cruise 281 is added successfully
+2022-10-07 17:23:53 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 17:24:03 INFO  CruiseFilter:66 - Cruise 282 is added successfully
+2022-10-07 20:13:06 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 20:14:35 INFO  CruiseFilter:68 - Cruise 283 is added successfully
+2022-10-07 21:42:44 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 21:43:11 INFO  CruiseFilter:68 - Cruise 284 is added successfully
+2022-10-07 21:44:21 INFO  CruiseFilter:68 - Cruise 285 is added successfully
+2022-10-07 21:49:39 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 21:55:53 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 22:05:40 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 22:17:15 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 22:17:25 INFO  CruiseFilter:74 - Cruise 286 is added successfully
+2022-10-07 22:19:26 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 22:19:34 INFO  CruiseFilter:74 - Cruise 287 is added successfully
+2022-10-07 22:38:38 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 22:38:50 INFO  CruiseFilter:71 - Cruise 288 is added successfully
+2022-10-07 22:40:02 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 22:40:16 INFO  CruiseFilter:71 - Cruise 289 is added successfully
+2022-10-07 22:47:33 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 22:49:24 INFO  CruiseFilter:70 - Cruise 290 is added successfully
+2022-10-07 22:53:34 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 22:54:12 INFO  CruiseFilter:70 - Cruise 291 is added successfully
+2022-10-07 22:58:27 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 22:58:50 INFO  CruiseFilter:70 - Cruise 292 is added successfully
+2022-10-07 23:06:53 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 23:07:23 INFO  CruiseFilter:70 - Cruise 293 is added successfully
+2022-10-07 23:14:37 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 23:14:48 INFO  CruiseFilter:70 - Cruise 294 is added successfully
+2022-10-07 23:19:25 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 23:19:38 INFO  CruiseFilter:70 - Cruise 295 is added successfully
+2022-10-07 23:26:36 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 23:26:47 INFO  CruiseFilter:70 - Cruise 296 is added successfully
+2022-10-07 23:30:24 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 23:30:34 INFO  CruiseFilter:70 - Cruise 297 is added successfully
+2022-10-07 23:38:20 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 23:38:34 INFO  CruiseFilter:71 - Cruise 298 is added successfully
+2022-10-07 23:47:30 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 23:48:33 INFO  CruiseFilter:71 - Cruise 299 is added successfully
+2022-10-07 23:52:41 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-07 23:53:20 INFO  CruiseFilter:71 - Cruise 300 is added successfully
+2022-10-08 00:04:53 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 00:05:06 INFO  CruiseFilter:72 - Cruise 301 is added successfully
+2022-10-08 00:18:33 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 00:19:08 INFO  CruiseFilter:67 - Cruise 302 is added successfully
+2022-10-08 00:24:42 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 00:25:10 INFO  CruiseFilter:67 - Cruise 303 is added successfully
+2022-10-08 00:26:54 INFO  CruiseFilter:67 - Cruise 304 is added successfully
+2022-10-08 00:33:53 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 00:34:09 INFO  CruiseFilter:67 - Cruise 305 is added successfully
+2022-10-08 00:37:48 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 00:37:57 INFO  CruiseFilter:67 - Cruise 306 is added successfully
+2022-10-08 00:48:29 INFO  CruiseFilter:67 - Cruise 307 is added successfully
+2022-10-08 00:56:24 INFO  CruiseFilter:67 - Cruise 308 is added successfully
+2022-10-08 00:58:19 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 00:58:59 INFO  CruiseFilter:67 - Cruise 309 is added successfully
+2022-10-08 01:00:23 INFO  CruiseFilter:67 - Cruise 310 is added successfully
+2022-10-08 01:14:42 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 01:15:20 INFO  CruiseFilter:67 - Cruise 311 is added successfully
+2022-10-08 01:19:28 INFO  CruiseFilter:67 - Cruise 312 is added successfully
+2022-10-08 01:22:02 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 01:22:20 INFO  CruiseFilter:67 - Cruise 313 is added successfully
+2022-10-08 01:25:51 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 01:26:19 INFO  CruiseFilter:67 - Cruise 314 is added successfully
+2022-10-08 02:05:30 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 02:06:00 INFO  CruiseFilter:67 - Cruise 315 is added successfully
+2022-10-08 02:15:17 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 02:15:47 INFO  CruiseFilter:67 - Cruise 316 is added successfully
+2022-10-08 02:43:24 INFO  AuthenticationFilter:62 - Hello, User
+2022-10-08 10:18:14 INFO  AuthenticationFilter:69 - Hello, Guest
+2022-10-08 10:18:43 INFO  AddNewUserCommand:80 - User N 253 is added
+2022-10-08 10:20:52 INFO  AuthenticationFilter:91 - Привіт, користувач
+2022-10-08 11:05:48 INFO  AuthenticationFilter:84 - Привіт, адмін
+2022-10-08 18:56:04 INFO  AuthenticationFilter:84 - Привіт, адмін
+2022-10-08 18:57:04 INFO  CruiseFilter:69 - Cruise 317 is added successfully
+2022-10-08 18:59:09 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 18:59:24 INFO  CruiseFilter:69 - Cruise 318 is added successfully
+2022-10-08 19:03:09 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 19:06:41 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 19:11:22 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 19:13:45 INFO  CruiseFilter:69 - Cruise 320 is added successfully
+2022-10-08 19:13:47 INFO  CruiseFilter:69 - Cruise 322 is added successfully
+2022-10-08 19:17:23 INFO  CruiseFilter:69 - Cruise 323 is added successfully
+2022-10-08 19:21:16 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 19:22:11 INFO  CruiseFilter:69 - Cruise 324 is added successfully
+2022-10-08 19:25:10 INFO  CruiseFilter:69 - Cruise 325 is added successfully
+2022-10-08 19:28:08 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 19:29:15 INFO  CruiseFilter:69 - Cruise 326 is added successfully
+2022-10-08 20:01:30 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 20:01:51 INFO  AuthenticationFilter:84 - Привіт, адмін
+2022-10-08 20:02:30 INFO  CruiseFilter:69 - Cruise 327 is added successfully
+2022-10-08 20:49:43 INFO  AuthenticationFilter:69 - Hello, Guest
+2022-10-08 20:50:31 INFO  AuthenticationFilter:98 - Привіт, гість
+2022-10-08 20:55:39 INFO  AuthenticationFilter:75 - Login or password is too short by entering
+2022-10-08 20:55:47 INFO  AuthenticationFilter:104 - Логін або пароль на вході занадто короткі
+2022-10-08 21:12:06 INFO  AuthenticationFilter:84 - Привіт, адмін
+2022-10-08 21:31:22 INFO  AuthenticationFilter:62 - Hello, User
+2022-10-08 21:33:55 INFO  OrderFilter:92 - Order 187 is added
+2022-10-08 21:36:26 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 21:37:02 INFO  CruiseFilter:69 - Cruise 353 is added successfully
+2022-10-08 21:38:56 INFO  AuthenticationFilter:62 - Hello, User
+2022-10-08 21:41:29 INFO  OrderFilter:92 - Order 188 is added
+2022-10-08 21:44:38 INFO  AuthenticationFilter:62 - Hello, User
+2022-10-08 21:45:00 INFO  AuthenticationFilter:91 - Привіт, користувач
+2022-10-08 21:45:16 INFO  OrderFilter:92 - Order 189 is added
+2022-10-08 21:45:50 INFO  OrderFilter:92 - Order 190 is added
+2022-10-08 21:47:10 INFO  CruiseServiceImpl:292 - No cruises for 10 days on 2022-10-11 are available
+2022-10-08 21:51:12 INFO  AuthenticationFilter:62 - Hello, User
+2022-10-08 21:51:28 INFO  OrderFilter:92 - Order 191 is added
+2022-10-08 21:51:40 INFO  AuthenticationFilter:91 - Привіт, користувач
+2022-10-08 21:51:58 INFO  OrderFilter:92 - Order 192 is added
+2022-10-08 22:21:25 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 22:28:05 INFO  AuthenticationFilter:55 - Hello, Admin
+2022-10-08 22:45:28 INFO  AuthenticationFilter:55 - Hello, Admin

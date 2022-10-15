@@ -1,0 +1,34 @@
+CREATE TABLE Ship(
+ship_id INT PRIMARY KEY AUTO_INCREMENT,
+capacity INT,
+number_ports_visited INT,
+staffs VARCHAR(20)
+);
+
+CREATE TABLE Cruise(
+cruise_id INT PRIMARY KEY AUTO_INCREMENT,
+start_date VARCHAR(20),
+finish_date VARCHAR(20),
+route VARCHAR(20),
+FK_ship INT DEFAULT NULL,
+FOREIGN KEY (FK_ship) REFERENCES SHIP(ship_id)
+);
+
+CREATE TABLE User(
+user_id INT PRIMARY KEY AUTO_INCREMENT,
+first_name VARCHAR(20),
+last_name VARCHAR(20),
+administrator BOOLEAN,
+login VARCHAR(20) UNIQUE,
+password_ VARCHAR(20)
+);
+
+CREATE TABLE Order_ (
+order_id INT PRIMARY KEY AUTO_INCREMENT,
+FK_user INT DEFAULT NULL,
+FK_cruise INT DEFAULT NULL,
+status ENUM('PAID', 'UNPAID', 'COMPLETED'),
+date VARCHAR(20),
+FOREIGN KEY (FK_user) REFERENCES USER(user_id),
+FOREIGN KEY (FK_cruise) REFERENCES CRUISE(cruise_id)
+);
