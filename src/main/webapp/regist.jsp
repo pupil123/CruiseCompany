@@ -37,13 +37,13 @@
             <td>min 5 char</td>
         </tr>
     </table>
-    <input type="hidden" name="Lang" value=<%=request.getAttribute("Lang")%>>
+    <input type="hidden" name="Lang" value="${Lang}">
     <input type="submit" value="Register"/>
 
     <%-- <button type="button" onclick="window.open('', '_self', ''); window.close();">Discard</button>
  --%>
 
-   <%-- <button onclick="self.close()">Close</butto--%>
+    <%-- <button onclick="self.close()">Close</butto--%>
 
 
     <%-- <input type="button" value="Close this window" onclick="windowClose();">

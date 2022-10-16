@@ -39,7 +39,7 @@
             <td>мінімум 5 знаків</td>
         </tr>
     </table>
-    <input type="hidden" name="Lang" value=<%=request.getAttribute("Lang")%>>
+    <input type="hidden" name="Lang" value="${Lang}">
     <input type="submit" value="Зареєструватись"/>
 
     <%-- <button type="button" onclick="window.open('', '_self', ''); window.close();">Discard</button>

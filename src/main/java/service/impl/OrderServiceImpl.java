@@ -83,7 +83,8 @@ public class OrderServiceImpl implements OrderService {
      * Responsible for building the list of Orders instance from the list of data encapsulated in ResultSet.
      *
      * @param resultSet the {@code ResultSet} from {@code getAllOrders()} method.
-     * @return {@code List<Order>} from ResultSet.
+     * @return {@code List} of {@code Order}from ResultSet.
+     * @throws SQLException when persist DB fails
      */
     private List<Order> getOrdersFromResultSet(ResultSet resultSet) throws SQLException {
 
@@ -109,6 +110,7 @@ public class OrderServiceImpl implements OrderService {
      * Responsible for deleting specified Order from DB.
      *
      * @param orderId instance of {@code int} parameter specifies Order.
+     * @throws SQLException when persist DB fails
      */
     @Override
     public void deleteOrderById(int orderId) throws SQLException {
@@ -120,6 +122,7 @@ public class OrderServiceImpl implements OrderService {
      * Responsible for updating Order in DB
      *
      * @param order instance of {@code Order} entity class .
+     * @throws SQLException when persist DB fails
      */
     @Override
     public void updateOrder(Order order) throws SQLException {
@@ -160,8 +163,9 @@ public class OrderServiceImpl implements OrderService {
      * Responsible for building Order instance from ResultSet.
      *
      * @param resultSet the {@code ResultSet} from {@code getOrderById()} method instance
-     *                      encapsulating data of Order.
+     *                  encapsulating data of Order.
      * @return {@code Order} from ResultSet.
+     * @throws SQLException when persist DB fails
      */
     private Order getOrderFromResultSet(ResultSet resultSet) throws SQLException {
 
@@ -186,6 +190,7 @@ public class OrderServiceImpl implements OrderService {
      * @param resultSet the {@code ResultSet} from {@code getNumOfPaidOrdersByCruiseId()} method instance
      *                  encapsulating data of int.
      * @return {@code int} from ResultSet.
+     * @throws SQLException when persist DB fails
      */
     private int getNumOfPaidOrdersByCruiseIdFromResultSet(ResultSet resultSet) throws SQLException {
 
@@ -205,6 +210,7 @@ public class OrderServiceImpl implements OrderService {
      * @param resultSet the {@code ResultSet} from {@code getUserListByCruiseId()} method instance
      *                  encapsulating data of UserIds.
      * @return {@code List<Integer>} from ResultSet.
+     * @throws SQLException when persist DB fails
      */
 
     private List<Integer> getUserIdsFromResultSet(ResultSet resultSet) throws SQLException {
@@ -225,6 +231,7 @@ public class OrderServiceImpl implements OrderService {
      * @param resultSet the {@code ResultSet} from {@code getOrderIdByCruiseIdUserId()} method instance
      *                  encapsulating data of int.
      * @return {@code int} from ResultSet.
+     * @throws SQLException when persist DB fails
      */
     private int getOrderIdFromResultSet(ResultSet resultSet) throws SQLException {
 
@@ -242,8 +249,9 @@ public class OrderServiceImpl implements OrderService {
      * Responsible for getting List of Integers int from ResultSet.
      *
      * @param resultSet the {@code ResultSet} from {@code getOrderIdListByCruiseFinishDate()} method instance
-     *                  encapsulating data of List<Integer>.
-     * @return {@code List<Integer>} from ResultSet.
+     *                  encapsulating data of {@code List} of {@code Integer}.
+     * @return {@code List} of {@code Integer}from ResultSet.
+     * @throws SQLException when persist DB fails
      */
     private List<Integer> getOrderIdsFromResultSet(ResultSet resultSet) throws SQLException {
 
@@ -286,7 +294,7 @@ public class OrderServiceImpl implements OrderService {
      * Responsible for getting List of User Ids with specified cruise id from DB.
      *
      * @param cruiseId the {@code int} parameter, specifies cruise.
-     * @return List<Integer> with the Ids of Users.
+     * @return {@code List} of {@code Integer} with the Ids of Users.
      */
     public List<Integer> getUserListByCruiseId(int cruiseId) {
 
@@ -339,7 +347,7 @@ public class OrderServiceImpl implements OrderService {
      * Responsible for getting List of Order Ids with specified cruise's finish date from DB.
      *
      * @param cruiseFinishDate instance of LocalDate {@code LocalDate} parameter, specifies LocalDate.
-     * @return List<Integer> with the data of Orders' Ids.
+     * @return {@code List} of {@code Integer} with the data of Orders' Ids.
      */
     public List<Integer> getOrderIdListByCruiseFinishDate(LocalDate cruiseFinishDate) {
 

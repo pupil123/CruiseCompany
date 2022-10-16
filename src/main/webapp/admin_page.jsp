@@ -1,9 +1,3 @@
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="domain.Cruise" %>
-<%@ page import="service.impl.ShipServiceImpl" %>
-<%@ page import="dao.impl.ShipDAOImpl" %>
-<%@ page import="service.impl.CruiseServiceImpl" %>
-<%@ page import="dao.impl.CruiseDAOImpl" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -13,11 +7,11 @@
 </head>
 <body>
 
-<div align="center" >
+<div align="center">
     <h2>Select a Route:</h2>
 
 
-    <form action="change_status_for_user_by_admin.jsp" method="post">
+    <form action="http://localhost:9999/admin/order/status" method="post">
 
         <p id="result"></p>
         <select name="cruiseRoute">
@@ -27,7 +21,7 @@
         </select>
 
         <br/><br/>
-
+        <input type="hidden" name="Lang" value="${Lang}">
         <input type="submit" value="selected cruise route"/>
 
 

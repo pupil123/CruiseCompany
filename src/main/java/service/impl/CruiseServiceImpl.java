@@ -73,6 +73,7 @@ public class CruiseServiceImpl implements CruiseService {
      *
      * @param resultSet the {@code ResultSet} from {@code getAllCruises()} method.
      * @return {@code List<Cruise>} from ResultSet.
+     * @throws SQLException when persist DB fails
      */
     private List<Cruise> getCruisesFromResultSet(ResultSet resultSet) throws SQLException {
 
@@ -99,6 +100,7 @@ public class CruiseServiceImpl implements CruiseService {
      *
      * @param resultSet the {@code ResultSet} from {@code getShipIdListByDateDuration()} method.
      * @return {@code List<Integer>} from ResultSet.
+     * @throws SQLException when persist DB fails
      */
     private List<Integer> getShipIdsFromResultSet(ResultSet resultSet) throws SQLException {
 
@@ -116,6 +118,7 @@ public class CruiseServiceImpl implements CruiseService {
      *
      * @param resultSet the {@code ResultSet} from {@code getCruiseIdListByStartDateDuration()} method.
      * @return {@code List<Integer>} from ResultSet.
+     * @throws SQLException when persist DB fails
      */
     private List<Integer> getCruiseIdsFromResultSet(ResultSet resultSet) throws SQLException {
 
@@ -132,6 +135,7 @@ public class CruiseServiceImpl implements CruiseService {
      * Responsible for deleting specified Cruise from DB.
      *
      * @param cruiseId instance of {@code int} Parameter specifies Cruise.
+     * @throws SQLException when persist DB fails
      */
     @Override
     public void deleteCruiseById(int cruiseId) throws SQLException {
@@ -142,6 +146,7 @@ public class CruiseServiceImpl implements CruiseService {
      * Responsible for updating Cruise in DB
      *
      * @param cruise the {@code Cruise} entity class .
+     * @throws SQLException when persist DB fails
      */
     @Override
     public void updateCruise(Cruise cruise) throws SQLException {
@@ -182,6 +187,7 @@ public class CruiseServiceImpl implements CruiseService {
      * @param resultSet the {@code ResultSet} from {@code getCruiseById()} method instance
      *                  encapsulating data of Cruise.
      * @return {@code Cruise} from ResultSet.
+     * @throws SQLException when persist DB fails
      */
     private Cruise getCruiseFromResultSet(ResultSet resultSet) throws SQLException {
 
@@ -206,7 +212,7 @@ public class CruiseServiceImpl implements CruiseService {
      *
      * @param startDate instance of {@code LocalDate} Parameter specifies local date.
      * @param period    instance of {@code int} Parameter specifies period.
-     * @return List<Integer> with specified shipIds List.
+     * @return {@code List} of {@code Integer} with specified shipIds List.
      */
     public List<Integer> getShipIdListByDateDuration(LocalDate startDate, int period) {
 
@@ -269,7 +275,7 @@ public class CruiseServiceImpl implements CruiseService {
      *
      * @param startDate instance of {@code LocalDate} Parameter specifies local date.
      * @param period    instance of {@code int} Parameter specifies period.
-     * @return List<Integer> with specified cruiseIds List.
+     * @return {@code List} of {@code Integer} with specified cruiseIds List.
      */
     public List<Integer> getCruiseIdListByStartDateDuration(LocalDate startDate, int period) {
 

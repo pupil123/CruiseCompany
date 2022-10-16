@@ -14,8 +14,9 @@ public interface Command {
     /**
      * Responsible for processing request and sending response.
      *
-     * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @param request  {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
      * @param response {@code HttpServletResponse} from {@code FrontControllerServlet} servlet
+     * @throws IOException when process request or response fails
      */
     void process(HttpServletRequest request, HttpServletResponse response) throws IOException;
 }

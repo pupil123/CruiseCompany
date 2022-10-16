@@ -15,7 +15,7 @@ import java.sql.SQLException;
 
 public class UpdateCruiseCommand implements Command {
     private final CruiseService SERVICE;
-    private static final Logger LOGGER =  LogManager.getLogger(UpdateCruiseCommand.class);
+    private static final Logger LOGGER = LogManager.getLogger(UpdateCruiseCommand.class);
 
     public UpdateCruiseCommand(CruiseService service) {
         this.SERVICE = service;
@@ -38,7 +38,7 @@ public class UpdateCruiseCommand implements Command {
             Cruise cruise = getCruiseFromRequest(request);
 
             SERVICE.updateCruise(cruise);
-            LOGGER.info("Cruise "+cruise.getId()+" is updated");
+            LOGGER.info("Cruise " + cruise.getId() + " is updated");
 
         } catch (SQLException | IOException e) {
             LOGGER.error("Cruise can't be updated");
@@ -52,7 +52,9 @@ public class UpdateCruiseCommand implements Command {
     /**
      * Receives request gets builds Cruise from it.
      *
+     * @return instance of class {@code Cruise}
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @throws IOException when process request fails
      */
     private Cruise getCruiseFromRequest(HttpServletRequest request) throws IOException {
 

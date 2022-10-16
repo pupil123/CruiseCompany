@@ -59,8 +59,8 @@
                 <option value="${cruise.getDuration()}">${cruise.getDuration()} days</option>
             </c:forEach>
         </select>
-        <input type="hidden" name="userId" value=<%=request.getAttribute("userId")%>>
-        <input type="hidden" name="Lang" value=<%=request.getAttribute("Lang")%>>
+        <input type="hidden" name="userId" value="${userId}">
+        <input type="hidden" name="Lang" value="${Lang}">
         <br/><br/>
         <input type="submit" value="Submit"/>
     </form>

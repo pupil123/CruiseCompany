@@ -84,7 +84,7 @@ public class UserControllerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-       // String userId = request.getParameter("userId");
+        // String userId = request.getParameter("userId");
         int userId = getUserIdFromRequest(request);
         LocalDate locDat = getLocalDateFromRequest(request);
         int days = getPeriodFromRequest(request);
@@ -102,35 +102,36 @@ public class UserControllerServlet extends HttpServlet {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        request.setAttribute("duration",days);
+        request.setAttribute("duration", days);
         request.setAttribute("shipIds", shipIds);
         request.setAttribute("startdate", locDat);
         request.setAttribute("userId", userId);
-        request.setAttribute("Lang",lang);
+        request.setAttribute("Lang", lang);
         //CruiseServiceImpl cruiseService = new CruiseServiceImpl(new CruiseDAOImpl());
         ShipServiceImpl shipService = new ShipServiceImpl(new ShipDAOImpl());
         //   List<Cruise> cruiseList = cruiseDao.getAllCruises();
-        List<Integer> cruiseIds=null;
+        List<Integer> cruiseIds = null;
         try {
-             cruiseIds=cruiseService.getCruiseIdListByStartDateDuration((LocalDate)request.getAttribute("startdate"),
+            cruiseIds = cruiseService.getCruiseIdListByStartDateDuration((LocalDate) request.getAttribute("startdate"),
                     (Integer) request.getAttribute("duration"));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        List<Cruise> cruiseList=new ArrayList<>();
-        for(Integer integer:cruiseIds){
+        List<Cruise> cruiseList = new ArrayList<>();
+        for (Integer integer : cruiseIds) {
             try {
                 cruiseList.add(cruiseService.getCruiseById(integer));
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         }
-        request.setAttribute("cruiseList",cruiseList);
+        request.setAttribute("cruiseList", cruiseList);
 
-        if(lang.equals("Ukr")){
+        if (lang.equals("Ukr")) {
             request.getServletContext().getRequestDispatcher("/userorder_page_ukr.jsp").forward(request, response);
-        }else{
-        request.getServletContext().getRequestDispatcher("/userorder_page.jsp").forward(request, response);}
+        } else {
+            request.getServletContext().getRequestDispatcher("/userorder_page.jsp").forward(request, response);
+        }
        /* String route = request.getParameter("cruiseRoute");
         int duration = Integer.parseInt(request.getParameter("cruiseDuration"));
         int categoryId = Integer.parseInt(request.getParameter("category"));
@@ -152,6 +153,7 @@ public class UserControllerServlet extends HttpServlet {
      *
      * @param request  HttpServletRequest
      * @param response HttpServletResponse
+     * @throws java.io.IOException when process request or response fails
      */
     private void commandProcess(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String commandURL = request.getRequestURI()
@@ -163,7 +165,7 @@ public class UserControllerServlet extends HttpServlet {
         command.process(request, response);
     }
 
-    private LocalDate getLocalDateFromRequest(HttpServletRequest request)  {
+    private LocalDate getLocalDateFromRequest(HttpServletRequest request) {
 
         String localDateString = request.getParameter("startdate");
         LocalDate localDate = LocalDate.parse(localDateString);
@@ -185,8 +187,9 @@ public class UserControllerServlet extends HttpServlet {
      * Receives request gets  CruiseId from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @return {@code int} with user's Id from request.
      */
-    private int getUserIdFromRequest(HttpServletRequest request) throws IOException {
+    private int getUserIdFromRequest(HttpServletRequest request) {
 
         String userId = request.getParameter("userId");
 

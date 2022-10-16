@@ -65,7 +65,7 @@ public class AddNewOrderCommand implements Command {
     public void process(HttpServletRequest request, HttpServletResponse response) {
 
         try {
-            int successAdd=0;
+            int successAdd = 0;
             int userId = getUserIdFromRequest(request);
             String lang = request.getParameter("Lang");
 
@@ -89,22 +89,22 @@ public class AddNewOrderCommand implements Command {
                     SHIP_SERVICE.getShipById(CRUISE_SERVICE.getCruiseById(cruiseId).getShipId()).getCapacity();
 
             if (num < capacity) {
-                int numOrders=ORDER_SERVICE.getAllOrders().size();
+                int numOrders = ORDER_SERVICE.getAllOrders().size();
 
                 int newOrderId = ORDER_SERVICE.addNewOrder(order);
-              //  orderId = newOrderId;
+                //  orderId = newOrderId;
                 LOGGER.info("Order " + newOrderId + " is added");
 
-                int numOrdersNew=ORDER_SERVICE.getAllOrders().size();
+                int numOrdersNew = ORDER_SERVICE.getAllOrders().size();
 
-                if(numOrdersNew==numOrders+1) {
-                    successAdd=1;
-             //       request.setAttribute("successAdd", successAdd);
-             //       request.setAttribute("newOrderId", newOrderId);
-                //    request.getServletContext().getRequestDispatcher("/display/addorder").forward(request, response);;}
+                if (numOrdersNew == numOrders + 1) {
+                    successAdd = 1;
+                    //       request.setAttribute("successAdd", successAdd);
+                    //       request.setAttribute("newOrderId", newOrderId);
+                    //    request.getServletContext().getRequestDispatcher("/display/addorder").forward(request, response);;}
 
-                response.sendRedirect("/display/addorder?successAdd=" +
-                        successAdd + "&newOrderId=" + newOrderId);
+                    response.sendRedirect("/display/addorder?successAdd=" +
+                            successAdd + "&newOrderId=" + newOrderId);
                 }
 
                /* Order orderById = ORDER_SERVICE.getOrderById(newOrderId);
@@ -150,8 +150,9 @@ public class AddNewOrderCommand implements Command {
      * Receives request gets  CruiseId from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @return parsed user's Id {@code int} from request
      */
-    private int getUserIdFromRequest(HttpServletRequest request) throws IOException {
+    private int getUserIdFromRequest(HttpServletRequest request) {
 
         String userId = request.getParameter("userId");
 
@@ -159,9 +160,11 @@ public class AddNewOrderCommand implements Command {
     }
 
     /**
-     * Receives request gets builds ship from it.
+     * Receives request gets builds Order from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @return {@code Order} from rtequest
+     * @throws IOException when process request fails
      */
     private Order getOrderFromRequest(HttpServletRequest request) throws IOException {
 

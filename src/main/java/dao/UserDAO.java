@@ -17,6 +17,7 @@ public interface UserDAO {
      *
      * @param user the instance of {@code User} entity class
      * @return int of the new user Id from DB.
+     * @throws SQLException when persist DB fails
      */
     int addNewUser(User user) throws SQLException;
 
@@ -24,21 +25,24 @@ public interface UserDAO {
      * Receives the id of User and deletes order from DB.
      *
      * @param userId instance of {@code int} Parameter specifies the User.
+     * @throws SQLException when persist DB fails
      */
-    void deleteUserById(int userId)throws SQLException;
+    void deleteUserById(int userId) throws SQLException;
 
     /**
      * Receives user and updates it in DB.
      *
      * @param user instance of {@code User} entity class.
+     * @throws SQLException when persist DB fails
      */
-    void updateUser(User user)throws SQLException;
+    void updateUser(User user) throws SQLException;
 
     /**
      * Receives the connection and returns all the users from DB.
      *
      * @param connection java.sql.Connection
      * @return ResultSet containing the data of all the Users from DB.
+     * @throws SQLException when persist DB fails
      */
     ResultSet getAllUsers(Connection connection) throws SQLException;
 
@@ -46,36 +50,37 @@ public interface UserDAO {
      * Responsible for getting the User with specified id from DB.
      *
      * @param connection java.sql.Connection
-     * @param userId    the {@code int} parameter, specifies order.
+     * @param userId     the {@code int} parameter, specifies order.
      * @return ResultSet with all the data of User.
+     * @throws SQLException when persist DB fails
      */
     ResultSet getUserById(int userId, Connection connection) throws SQLException;
 
     /**
      * Receives User's login and password and checks if user with such data in DB exists
      *
-     * @param login the instance of {@code String} specifies user's login
+     * @param login    the instance of {@code String} specifies user's login
      * @param password the instance of {@code String} specifies user's password
      * @return boolean of the verified user in DB.
      */
-    boolean verificateUser(String login, String password) ;
+    boolean verificateUser(String login, String password);
 
     /**
      * Receives User's login and password and checks if user with such data is admin in DB
      *
-     * @param login the instance of {@code String} specifies user's login
+     * @param login    the instance of {@code String} specifies user's login
      * @param password the instance of {@code String} specifies user's password
      * @return boolean of the verified user in DB.
      */
-    boolean isAdmin(String login, String password) ;
+    boolean isAdmin(String login, String password);
 
     /**
      * Receives User's login and password and searches for user's Id with such data in DB
      *
-     * @param login the instance of {@code String} specifies user's login
+     * @param login    the instance of {@code String} specifies user's login
      * @param password the instance of {@code String} specifies user's password
      * @return int of the user's Id in DB.
      */
-    int idByLogPas (String login, String password) ;
+    int idByLogPas(String login, String password);
 
 }

@@ -56,8 +56,9 @@ public class GetAllShipsCommand implements Command {
      * Receives request gets  CruiseId from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @return ship's Id {@code int} from request
      */
-    private int getShipIdFromRequest(HttpServletRequest request) throws IOException {
+    private int getShipIdFromRequest(HttpServletRequest request) {
 
         String shipId = request.getParameter("ship_id");
 

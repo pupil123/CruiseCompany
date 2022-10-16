@@ -8,6 +8,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="service.impl.UserServiceImpl" %>
 <%@ page import="dao.impl.UserDAOImpl" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
@@ -31,7 +32,7 @@
         Select a User:&nbsp;
         <select name="userLogPass">
 
-            <%
+            <%--<%
                 request.setCharacterEncoding("UTF-8");
 
                 UserServiceImpl userService = new UserServiceImpl(new UserDAOImpl());
@@ -50,15 +51,15 @@
 
             <%
                 }
-            %>
+            %>--%>
 
 
-            <%--<c:forEach items="${mapOrderUser}" var="mapOrder">
-                &lt;%&ndash;<option value="${cruise.getStartDate()}">${cruise.getStartDate()}</option>&ndash;%&gt;
-                &lt;%&ndash;<option value="${cruise.getRoute()}">${cruise.getRoute()}</option> by ship <option value="${cruise.getShipId()}">${cruise.getShipId()}</option>
-&ndash;%&gt;
-                <option value="${mapOrder.getId()}">${mapOrderUser.get(mapOrder).getLogin()} ${mapOrderUser.get(mapOrder).getPassword()} ${mapOrder.getStatus} </option>
-            </c:forEach>--%>
+            <c:forEach items="${mapOrderUser_EntrySet}" var="mapEntry">
+                <%--<option value="${cruise.getStartDate()}">${cruise.getStartDate()}</option>--%>
+                <%--<option value="${cruise.getRoute()}">${cruise.getRoute()}</option> by ship <option value="${cruise.getShipId()}">${cruise.getShipId()}</option>
+--%>
+                <option value="${mapEntry.key.id}">${mapEntry.value.login} ${mapEntry.value.password} ${mapEntry.key.status}</option>
+            </c:forEach>
         </select>
 
         <br/><br/>
@@ -69,7 +70,7 @@
             <option value="COMPLETED">COMPLETED</option>
         </select>
 
-        <input type="hidden" name="cruiseId"  value=<%=cruiseId%>>
+        <%--<input type="hidden" name="cruiseId"  value=<%=cruiseId%>>--%>
         <br/><br/>
 
         <input type="submit" value="Submit"/>

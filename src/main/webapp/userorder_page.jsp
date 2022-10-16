@@ -62,9 +62,9 @@
                 </c:forEach>
 
         </select>
-        <input type="hidden" name="startdate" value=<%=request.getAttribute("startdate")%>>
-        <input type="hidden" name="userId" value=<%=request.getAttribute("userId")%>>
-        <input type="hidden" name="Lang" value=<%=request.getAttribute("Lang")%>>
+        <input type="hidden" name="startdate" value="${startdate}">
+        <input type="hidden" name="userId" value="${userId}">
+        <input type="hidden" name="Lang" value="${Lang}">
         <br/><br/>
 
        <%-- <%request.setAttribute("startdate",request.getAttribute("startdate"));%>--%>

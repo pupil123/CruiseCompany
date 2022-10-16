@@ -84,6 +84,8 @@ public class UpdateOrderCommand implements Command {
      * Receives request gets builds Cruise from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @return {@code Order}
+     * @throws IOException when process request or respond fails
      */
     private Order getOrderFromRequest(HttpServletRequest request) throws IOException {
 

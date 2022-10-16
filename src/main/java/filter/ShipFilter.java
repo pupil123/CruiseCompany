@@ -47,7 +47,13 @@ public class ShipFilter implements Filter {
         String capacity = request.getParameter("capacity");
         String numOfVisitedPorts = request.getParameter("num visited ports");
         String staffs = request.getParameter("staffs");
-        String route = request.getParameter("route");
+
+        try {
+            Integer.parseInt(capacity);
+            Integer.parseInt(numOfVisitedPorts);
+        } catch (Exception e) {
+            response.getWriter().println("Please enter correct ship capacity and number of visited ports");
+        }
 
         Ship ship = new ShipBuilder()
                 .buildCapacity(Integer.parseInt(capacity))

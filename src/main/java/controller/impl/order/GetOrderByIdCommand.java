@@ -57,8 +57,9 @@ public class GetOrderByIdCommand implements Command {
      * Receives request gets  CruiseId from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @return parsed int from String
      */
-    private int getOrderIdFromRequest(HttpServletRequest request) throws IOException {
+    private int getOrderIdFromRequest(HttpServletRequest request) {
 
         String orderId = request.getParameter("order_id");
 

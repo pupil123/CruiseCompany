@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 
 import static util.Constants.ADMIN_ORDER_STATUS_CONTROLLER_SERVLET;
-import static util.Constants.USER_CONTROLLER_SERVLET;
+
 
 @WebServlet(urlPatterns = ADMIN_ORDER_STATUS_CONTROLLER_SERVLET)
 public class OrderStatusControllerServlet extends HttpServlet {
@@ -92,12 +92,20 @@ public class OrderStatusControllerServlet extends HttpServlet {
                 throwables.printStackTrace();
             }
         }
-
-        request.setAttribute("mapOrderUser", mapOrderUser);
+       // request.setAttribute("mapOrderUser", mapOrderUser);
+        request.setAttribute("mapOrderUser_EntrySet", mapOrderUser.entrySet());
 
         request.setAttribute("cruiseId", cruiseId);
-        //mapOrderUser.get()
+
+      /* for(Map.Entry  <Order, User> ou: mapOrderUser.entrySet())
+       {ou.getKey().getStatus();}*/
         //request.setAttribute("orderList", orderList);
+        //String lang = (String) request.getAttribute("Lang");
+        String lang = request.getParameter("Lang");
+        if (lang.equals("Ukr")) {
+            req.getServletContext().getRequestDispatcher("/change_status_for_user_by_admin_ukr.jsp").forward(request, response);
+        }
+        /*session.setAttribute("Lang", request.getAttribute("Lang"));*/
         req.getServletContext().getRequestDispatcher("/change_status_for_user_by_admin.jsp").forward(request, response);
     }
 }

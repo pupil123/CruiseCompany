@@ -18,6 +18,7 @@ public interface CruiseService {
      *
      * @param cruise instance of {@code Cruise} entity class
      * @return int value of new cruise Id
+     * @throws SQLException when persist DB fails
      */
     int addNewCruise(Cruise cruise) throws SQLException;
 
@@ -25,6 +26,7 @@ public interface CruiseService {
      * Responsible for getting the list of all Cruises from DB.
      *
      * @return {@code List<Cruise>} the list of all Cruises from DB.
+     * @throws SQLException when persist DB fails
      */
     List<Cruise> getAllCruises() throws SQLException;
 
@@ -32,13 +34,15 @@ public interface CruiseService {
      * Responsible for deleting specified Cruise from DB.
      *
      * @param cruiseId instance of {@code int} parameter specifies Cruise.
+     * @throws SQLException when persist DB fails
      */
     void deleteCruiseById(int cruiseId) throws SQLException;
 
     /**
      * Responsible for updating Cruise in DB
      *
-     * @param cruise the {@code Cruise} entity class .
+     * @param cruise the {@code Cruise} entity class
+     * @throws SQLException when persist DB fails
      */
     void updateCruise(Cruise cruise) throws SQLException;
 
@@ -47,6 +51,7 @@ public interface CruiseService {
      *
      * @param cruiseId instance of {@code int} Parameter specifies Cruise.
      * @return {@code Cruise} instance.
+     * @throws SQLException when persist DB fails
      */
     Cruise getCruiseById(int cruiseId) throws SQLException;
 
@@ -55,7 +60,8 @@ public interface CruiseService {
      *
      * @param startDate instance of {@code LocalDate} Parameter specifies local date.
      * @param days      instance of {@code int} Parameter specifies period.
-     * @return List<Integer> with specified shipIds List.
+     * @return {@code List} of {@code Integer} with specified shipIds List.
+     * @throws SQLException when persist DB fails
      */
     List<Integer> getShipIdListByDateDuration(LocalDate startDate, int days) throws SQLException;
 
@@ -65,6 +71,7 @@ public interface CruiseService {
      * @param startDate instance of {@code LocalDate} Parameter specifies local date.
      * @param route     instance of {@code String} Parameter specifies route.
      * @return int with specified cruiseId.
+     * @throws SQLException when persist DB fails
      */
     int getCruiseIdByDateRoute(LocalDate startDate, String route) throws SQLException;
 
@@ -73,7 +80,8 @@ public interface CruiseService {
      *
      * @param startDate instance of {@code LocalDate} Parameter specifies local date.
      * @param period    instance of {@code int} Parameter specifies period.
-     * @return List<Integer> with specified cruiseIds List.
+     * @return {@code List} of {@code Integer} with specified cruiseIds List.
+     * @throws SQLException when persist DB fails
      */
     List<Integer> getCruiseIdListByStartDateDuration(LocalDate startDate, int period) throws SQLException;
 

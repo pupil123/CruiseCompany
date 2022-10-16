@@ -60,18 +60,26 @@ public class GetShipIdsByDateDurationCommand implements Command {
     }
 
     /**
-     * Receives request gets  CruiseId from it.
+     * Receives request gets  LocalDate from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @return {@code LocalDate} from request.
      */
-    private LocalDate getLocalDateFromRequest(HttpServletRequest request) throws IOException {
+    private LocalDate getLocalDateFromRequest(HttpServletRequest request) {
 
         String localDateString = request.getParameter("startdate");
         LocalDate localDate = LocalDate.parse(localDateString);
         return localDate;
     }
 
-    private Period getPeriodFromRequest(HttpServletRequest request) throws IOException {
+    /**
+     * Receives request gets  {@code Period} from it.
+     *
+     * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @return {@code Period} from request.
+     */
+
+    private Period getPeriodFromRequest(HttpServletRequest request) {
         //example "P1Y2M21D"
         String period = request.getParameter("duration");
         Period p = Period.parse(period);

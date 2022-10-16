@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
 import static util.Constants.FRONT_CONTROLLER_SERVLET;
 import static util.Constants.FRONT_CONTROLLER_SERVLET_COMMON;
 import static util.UtilData.COMMANDS_MAP;
@@ -22,16 +23,18 @@ public class FrontControllerServlet extends HttpServlet {
      *
      * @param request  HttpServletRequest
      * @param response HttpServletResponse
+     * @throws java.io.IOException when process request or response fails
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       commandProcess(request, response);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        commandProcess(request, response);
     }
     /**
      * Processes get-request
      *
      * @param request  HttpServletRequest
      * @param response HttpServletResponse
+     * throws java.io.IOException
      */
   /*  @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -43,9 +46,10 @@ public class FrontControllerServlet extends HttpServlet {
      *
      * @param request  HttpServletRequest
      * @param response HttpServletResponse
+     * @throws java.io.IOException when process request or response fails
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         commandProcess(request, response);
     }
 
@@ -60,6 +64,7 @@ public class FrontControllerServlet extends HttpServlet {
      *
      * @param request  HttpServletRequest
      * @param response HttpServletResponse
+     * @throws java.io.IOException when process request or response fails
      */
     private void commandProcess(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String commandURL = request.getRequestURI()

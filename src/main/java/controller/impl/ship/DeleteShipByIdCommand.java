@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 public class DeleteShipByIdCommand implements Command {
     private final ShipService SERVICE;
-    private static final Logger LOGGER =  LogManager.getLogger(DeleteShipByIdCommand.class);
+    private static final Logger LOGGER = LogManager.getLogger(DeleteShipByIdCommand.class);
 
     public DeleteShipByIdCommand(ShipService service) {
         this.SERVICE = service;
@@ -37,8 +37,8 @@ public class DeleteShipByIdCommand implements Command {
             int shipId = getShipIdFromRequest(request);
 
             SERVICE.deleteShipById(shipId);
-            LOGGER.info("Ship N "+shipId+" is deleted");
-        } catch (SQLException | IOException e) {
+            LOGGER.info("Ship N " + shipId + " is deleted");
+        } catch (SQLException e) {
             LOGGER.error("Ship can't be deleted");
             response.setStatus(406);
             return;
@@ -51,8 +51,9 @@ public class DeleteShipByIdCommand implements Command {
      * Receives request gets  CruiseId from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @return ship's Id {@code int} from request
      */
-    private int getShipIdFromRequest(HttpServletRequest request) throws IOException {
+    private int getShipIdFromRequest(HttpServletRequest request) {
 
         String shipId = request.getParameter("ship_id");
 

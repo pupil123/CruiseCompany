@@ -1,9 +1,3 @@
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="domain.Cruise" %>
-<%@ page import="service.impl.ShipServiceImpl" %>
-<%@ page import="dao.impl.ShipDAOImpl" %>
-<%@ page import="service.impl.CruiseServiceImpl" %>
-<%@ page import="dao.impl.CruiseDAOImpl" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -19,15 +13,15 @@
     <h2>Оберіть маршрут круїзу:</h2>
 
 
-    <form action="change_status_for_user_by_admin_ukr.jsp" method="post">
+    <form action="http://localhost:9999/admin/order/status" method="post">
 
         <p id="result"></p>
         <select name="cruiseRoute">
 
-                <c:forEach items="${cruiseList}" var="cruise">
+            <c:forEach items="${cruiseList}" var="cruise">
 
-                    <option value="${cruise.getId()}">${cruise.getRoute()} on ${cruise.getStartDate()}</option>
-                </c:forEach>
+                <option value="${cruise.getId()}">${cruise.getRoute()} on ${cruise.getStartDate()}</option>
+            </c:forEach>
 
         </select>
 
@@ -53,6 +47,7 @@
         <%--<% session.setAttribute("cruiseId",%>=result<%)%>>--%>
         <%--<input type="hidden" name="cruiseRoute" value="GetSelectedText()">
         <% session.setAttribute("cruiseId", "Submit");%>--%>
+        <input type="hidden" name="Lang" value="${Lang}">
         <input type="submit" value="Обрати маршрут круїзу"/>
 
 
@@ -66,7 +61,7 @@
 
         <form action="adm_add_new_cruise_ukr.jsp" method="post">
             <%--<div style="float:left;">--%>
-                <%session.setAttribute("Lang", request.getAttribute("Lang"));%>
+            <%session.setAttribute("Lang", request.getAttribute("Lang"));%>
 
             <input type="submit" value="Додати новий круїз"/>
             <%--  </div>--%>

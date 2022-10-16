@@ -57,8 +57,9 @@ public class GetUserByIdCommand implements Command {
      * Receives request gets  CruiseId from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @return user's Id {@code int} from request
      */
-    private int getUserIdFromRequest(HttpServletRequest request) throws IOException {
+    private int getUserIdFromRequest(HttpServletRequest request) {
 
         String userId = request.getParameter("user_id");
 

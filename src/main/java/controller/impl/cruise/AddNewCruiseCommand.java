@@ -136,6 +136,8 @@ public class AddNewCruiseCommand implements Command {
      * Receives request gets builds Cruise from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @throws java.io.IOException when process request or response fails
+     * @return instance of {@code Cruise}class from request.
      */
     private Cruise getCruiseFromRequest(HttpServletRequest request) throws IOException {
 

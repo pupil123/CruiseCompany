@@ -12,7 +12,8 @@ public interface CommonsOperable {
      * Responsible for deleting Item from DB
      *
      * @param itemId instance of {@code int} Parameter specifies Item.
-     * @param query instance of {@code String} Parameter specifies query
+     * @param query  instance of {@code String} Parameter specifies query
+     * @throws SQLException when persist DB fails
      */
     default void deleteItemById(int itemId, String query) throws SQLException {
 
@@ -33,8 +34,9 @@ public interface CommonsOperable {
      * Responsible for getting all Items from DB
      *
      * @param connection java.sql.Connection
-     * @param query instance of {@code String} Parameter specifies query
+     * @param query      instance of {@code String} Parameter specifies query
      * @return ResultSet with data of all items.
+     * @throws SQLException when persist DB fails
      */
     default ResultSet getAllItems(Connection connection, String query) throws SQLException {
 
@@ -50,6 +52,7 @@ public interface CommonsOperable {
      * @param query      instance of {@code String} Parameter specifies query.
      * @param itemId     instance of {@code int} Parameter specifies Item.
      * @return ResultSet with data of itemId.
+     * @throws SQLException when persist DB fails
      */
     default ResultSet getItemById(Connection connection, String query, int itemId) throws SQLException {
 

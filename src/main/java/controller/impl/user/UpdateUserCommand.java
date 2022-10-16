@@ -17,7 +17,7 @@ import java.sql.SQLException;
 
 public class UpdateUserCommand implements Command {
     private final UserService SERVICE;
-    private static final Logger LOGGER =  LogManager.getLogger(UpdateUserCommand.class);
+    private static final Logger LOGGER = LogManager.getLogger(UpdateUserCommand.class);
 
     public UpdateUserCommand(UserService service) {
         this.SERVICE = service;
@@ -40,7 +40,7 @@ public class UpdateUserCommand implements Command {
             User user = getUserFromRequest(request);
 
             SERVICE.updateUser(user);
-            LOGGER.info("User N "+user.getId()+" is updated");
+            LOGGER.info("User N " + user.getId() + " is updated");
 
         } catch (SQLException | IOException e) {
             LOGGER.error("User can't be updated");
@@ -52,9 +52,11 @@ public class UpdateUserCommand implements Command {
     }
 
     /**
-     * Receives request gets builds Cruise from it.
+     * Receives request gets builds User from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @throws IOException when process request or respond fails
+     * @return instance of  {@code User} classs from request
      */
     private User getUserFromRequest(HttpServletRequest request) throws IOException {
 

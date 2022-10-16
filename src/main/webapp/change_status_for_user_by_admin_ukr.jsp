@@ -1,4 +1,3 @@
-
 <%@ page import="service.impl.OrderServiceImpl" %>
 <%@ page import="dao.impl.OrderDAOImpl" %>
 <%@ page import="java.util.List" %>
@@ -25,26 +24,12 @@
     <form action="http://localhost:9999/filter/order/status" method="post">
         Оберіть користувача:&nbsp;
         <select name="userLogPass">
-            <%
-                request.setCharacterEncoding("UTF-8");
-
-                UserServiceImpl userService = new UserServiceImpl(new UserDAOImpl());
-
-                Integer cruiseId = Integer.valueOf(request.getParameter("cruiseRoute"));
-
-                OrderServiceImpl orderService = new OrderServiceImpl(new OrderDAOImpl());
-
-                List<Integer> userIds = orderService.getUserListByCruiseId(cruiseId);
-
-                for (Integer userId : userIds) {
-            %>
-            <option><%=userService.getUserById(userId).getLogin()%> <%=userService.getUserById(userId).getPassword()%>
-                <%=orderService.getOrderById(orderService.getOrderIdByCruiseIdUserId(cruiseId, userId)).getStatus()%>
-            </option>
-
-            <%
-                }
-            %>
+            <c:forEach items="${mapOrderUser_EntrySet}" var="mapEntry">
+                <%--<option value="${cruise.getStartDate()}">${cruise.getStartDate()}</option>--%>
+                <%--<option value="${cruise.getRoute()}">${cruise.getRoute()}</option> by ship <option value="${cruise.getShipId()}">${cruise.getShipId()}</option>
+--%>
+                <option value="${mapEntry.key.id}">${mapEntry.value.login} ${mapEntry.value.password} ${mapEntry.key.status}</option>
+            </c:forEach>
         </select>
         <%-- <input type="hidden" name="startdate" value=<%=request.getAttribute("startdate")%>>
          <input type="hidden" name="userId" value=<%=request.getAttribute("userId")%>>--%>
@@ -56,7 +41,7 @@
             <option value="COMPLETED">COMPLETED</option>
         </select>
         <%--<option value="<%=listCategory.get(i)%>">listCategory.get(i)</option>--%>
-        <input type="hidden" name="cruiseId" value=<%=cruiseId%>>
+        <%--<input type="hidden" name="cruiseId" value=<%=cruiseId%>>--%>
         <br/><br/>
         <%-- <%request.setAttribute("startdate",request.getAttribute("startdate"));%>--%>
         <%--<input type="hidden" name="startdate" value=<%request.getAttribute("startdate");%></input>--%>

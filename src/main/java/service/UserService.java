@@ -15,47 +15,51 @@ public interface UserService {
      *
      * @param user the instance of {@code User} entity class
      * @return int of the new user Id from DB.
+     * @throws SQLException when persist DB fails
      */
     int addNewUser(User user) throws SQLException;
 
     /**
      * Receives User's login and password and checks if user with such data in DB exists
      *
-     * @param login the instance of {@code String} specifies user's login
+     * @param login    the instance of {@code String} specifies user's login
      * @param password the instance of {@code String} specifies user's password
      * @return boolean of the verified user in DB.
      */
-    boolean verificateUser(String login, String password) ;
+    boolean verificateUser(String login, String password);
 
     /**
      * Receives User's login and password and checks if user with such data is admin in DB
      *
-     * @param login the instance of {@code String} specifies user's login
+     * @param login    the instance of {@code String} specifies user's login
      * @param password the instance of {@code String} specifies user's password
      * @return boolean of the verified user in DB.
      */
-    boolean isAdmin(String login, String password) ;
+    boolean isAdmin(String login, String password);
 
     /**
      * Receives User's login and password and searches for user's Id with such data in DB
      *
-     * @param login the instance of {@code String} specifies user's login
+     * @param login    the instance of {@code String} specifies user's login
      * @param password the instance of {@code String} specifies user's password
      * @return int of the user's Id in DB.
      */
-    int idByLogPas (String login, String password) ;
+    int idByLogPas(String login, String password);
 
     /**
      * Responsible for getting the list of all Users from DB.
      *
      * @return {@code List<User>} the list of all Users from DB.
+     * @throws SQLException when persist DB fails
      */
-    List<User> getAllUsers() throws SQLException;;
+    List<User> getAllUsers() throws SQLException;
+
 
     /**
      * Responsible for deleting specified User from DB.
      *
      * @param userId instance of {@code int} parameter specifies User.
+     * @throws SQLException when persist DB fails
      */
     void deleteUserById(int userId) throws SQLException;
 
@@ -63,6 +67,7 @@ public interface UserService {
      * Responsible for updating User in DB
      *
      * @param user instance of {@code User} entity class .
+     * @throws SQLException when persist DB fails
      */
     void updateUser(User user) throws SQLException;
 
@@ -71,6 +76,7 @@ public interface UserService {
      *
      * @param userId instance of {@code int} parameter specifies User.
      * @return {@code User} instance with specified id.
+     * @throws SQLException when persist DB fails
      */
     User getUserById(int userId) throws SQLException;
 

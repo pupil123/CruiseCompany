@@ -57,15 +57,17 @@ public class OrderStatusFilter implements Filter {
 
         final HttpServletRequest req = (HttpServletRequest) request;
         final HttpServletResponse res = (HttpServletResponse) response;
-        String userLogPass = request.getParameter("userLogPass");
+        /*String userLogPass = request.getParameter("userLogPass");*/
         String userStatus = request.getParameter("userStatus");
-        String[] numbers = userLogPass.split(" ");
-        UserService userService = new UserServiceImpl(new UserDAOImpl());
+       /* String[] numbers = userLogPass.split(" ");
+        UserService userService = new UserServiceImpl(new UserDAOImpl());*/
         OrderService orderService = new OrderServiceImpl(new OrderDAOImpl());
-        int cruiseId = Integer.parseInt(request.getParameter("cruiseId"));
+       // int cruiseId = Integer.parseInt(request.getParameter("cruiseId"));
+        int orderId = Integer.parseInt(request.getParameter("userLogPass"));
+
 
         try {
-            int orderId = orderService.getOrderIdByCruiseIdUserId(cruiseId, userService.idByLogPas(numbers[0], numbers[1]));
+            /*int orderId = orderService.getOrderIdByCruiseIdUserId(cruiseId, userService.idByLogPas(numbers[0], numbers[1]));*/
             Order o = orderService.getOrderById(orderId);
             o.setStatus(OrderStatus.valueOf(userStatus));
             orderService.updateOrder(o);

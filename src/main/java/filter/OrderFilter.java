@@ -104,8 +104,7 @@ public class OrderFilter implements Filter {
                     //    request.getServletContext().getRequestDispatcher("/display/addorder").forward(request, response);;}
 
 
-
-                   //   res.sendRedirect("/filter/order/out?newOrderId=" + newOrderId);
+                    //   res.sendRedirect("/filter/order/out?newOrderId=" + newOrderId);
                     Cruise cruise = CRUISE_SERVICE.getCruiseById(cr);
                     req.getSession().setAttribute("cruise", cruise);
                     User user = USER_SERVICE.getUserById(userId);
@@ -141,7 +140,7 @@ public class OrderFilter implements Filter {
                 }
             }
 
-        } catch (SQLException | IOException  e) {
+        } catch (SQLException | IOException e) {
             LOGGER.error("Order can't be added");
             res.setStatus(406);
             return;
@@ -161,8 +160,9 @@ public class OrderFilter implements Filter {
      * Receives request gets  CruiseId from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @return user's Id {@code int} from rtequest
      */
-    private int getUserIdFromRequest(HttpServletRequest request) throws IOException {
+    private int getUserIdFromRequest(HttpServletRequest request) {
 
         String userId = request.getParameter("userId");
 

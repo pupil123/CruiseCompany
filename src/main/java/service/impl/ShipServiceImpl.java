@@ -70,6 +70,7 @@ public class ShipServiceImpl implements ShipService {
      *
      * @param resultSet the {@code ResultSet} from {@code getAllShips()} method.
      * @return {@code List<Ship>} from ResultSet.
+     * @throws SQLException when persist DB fails
      */
     private List<Ship> getShipsFromResultSet(ResultSet resultSet) throws SQLException {
 
@@ -95,6 +96,7 @@ public class ShipServiceImpl implements ShipService {
      * Responsible for deleting specified Ship from DB.
      *
      * @param shipId the {@code int} parameter specifies Ship.
+     * @throws SQLException when persist DB fails
      */
     @Override
     public void deleteShipById(int shipId) throws SQLException {
@@ -106,6 +108,7 @@ public class ShipServiceImpl implements ShipService {
      * Responsible for updating Ship in DB
      *
      * @param ship the {@code Ship} entity class .
+     * @throws SQLException when persist DB fails
      */
     @Override
     public void updateShip(Ship ship) throws SQLException {
@@ -148,6 +151,7 @@ public class ShipServiceImpl implements ShipService {
      * @param resultSet the {@code ResultSet} from {@code getShipById()} method instance
      *                  encapsulating data of Ship.
      * @return {@code Ship} from ResultSet.
+     * @throws SQLException when persist DB fails
      */
     private Ship getShipFromResultSet(ResultSet resultSet) throws SQLException {
 

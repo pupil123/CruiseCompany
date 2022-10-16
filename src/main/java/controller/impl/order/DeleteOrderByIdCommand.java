@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 public class DeleteOrderByIdCommand implements Command {
     private final OrderService SERVICE;
-    private static final Logger LOGGER =  LogManager.getLogger(DeleteOrderByIdCommand.class);
+    private static final Logger LOGGER = LogManager.getLogger(DeleteOrderByIdCommand.class);
 
     public DeleteOrderByIdCommand(OrderService service) {
         this.SERVICE = service;
@@ -37,9 +37,9 @@ public class DeleteOrderByIdCommand implements Command {
             int orderId = getOrderIdFromRequest(request);
 
             SERVICE.deleteOrderById(orderId);
-            LOGGER.info("Order N "+orderId+" is deleted");
+            LOGGER.info("Order N " + orderId + " is deleted");
 
-        } catch (SQLException | IOException e) {
+        } catch (SQLException e) {
             LOGGER.error("Order can't be deleted");
             response.setStatus(406);
             return;
@@ -49,11 +49,12 @@ public class DeleteOrderByIdCommand implements Command {
     }
 
     /**
-     * Receives request gets  CruiseId from it.
+     * Receives request gets  OrderId from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @return parsed order's Id {@code int} from request
      */
-    private int getOrderIdFromRequest(HttpServletRequest request) throws IOException {
+    private int getOrderIdFromRequest(HttpServletRequest request) {
 
         String orderId = request.getParameter("order_id");
 

@@ -56,8 +56,9 @@ public class GetCruiseByIdCommand implements Command {
      * Receives request gets  CruiseId from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @return {@code int} with cruise's Id from request.
      */
-    private int getCruiseIdFromRequest(HttpServletRequest request) throws IOException {
+    private int getCruiseIdFromRequest(HttpServletRequest request) {
 
         String cruiseId = request.getParameter("cruise_id");
 

@@ -37,19 +37,19 @@ public class UserServiceImpl implements UserService {
     /**
      * Receives User's login and password and checks if user with such data in DB exists
      *
-     * @param login the instance of {@code String} specifies user's login
+     * @param login    the instance of {@code String} specifies user's login
      * @param password the instance of {@code String} specifies user's password
      * @return boolean of the verified user in DB.
      */
     @Override
-    public boolean verificateUser(String login, String password)  {
+    public boolean verificateUser(String login, String password) {
         return USER_DAO.verificateUser(login, password);
     }
 
     /**
      * Receives User's login and password and checks if user with such data is admin in DB
      *
-     * @param login the instance of {@code String} specifies user's login
+     * @param login    the instance of {@code String} specifies user's login
      * @param password the instance of {@code String} specifies user's password
      * @return boolean of the verified user in DB.
      */
@@ -61,13 +61,13 @@ public class UserServiceImpl implements UserService {
     /**
      * Receives User's login and password and searches for user's Id with such data in DB
      *
-     * @param login the instance of {@code String} specifies user's login
+     * @param login    the instance of {@code String} specifies user's login
      * @param password the instance of {@code String} specifies user's password
      * @return int of the user's Id in DB.
      */
     @Override
-    public int idByLogPas (String login, String password)  {
-        return USER_DAO.idByLogPas(login,password);
+    public int idByLogPas(String login, String password) {
+        return USER_DAO.idByLogPas(login, password);
     }
 
     /**
@@ -103,6 +103,7 @@ public class UserServiceImpl implements UserService {
      *
      * @param resultSet the {@code ResultSet} from {@code getAllUsers()} method.
      * @return {@code List<User>} from ResultSet.
+     * @throws SQLException when persist DB fails
      */
     private List<User> getUsersFromResultSet(ResultSet resultSet) throws SQLException {
 
@@ -128,6 +129,7 @@ public class UserServiceImpl implements UserService {
      * Responsible for deleting specified User from DB.
      *
      * @param userId instance of {@code int} parameter specifies User.
+     * @throws SQLException when persist DB fails
      */
     @Override
     public void deleteUserById(int userId) throws SQLException {
@@ -139,6 +141,7 @@ public class UserServiceImpl implements UserService {
      * Responsible for updating User in DB
      *
      * @param user instance of {@code User} entity class .
+     * @throws SQLException when persist DB fails
      */
     @Override
     public void updateUser(User user) throws SQLException {
@@ -178,8 +181,9 @@ public class UserServiceImpl implements UserService {
      * Responsible for building User instance from ResultSet.
      *
      * @param resultSet the {@code ResultSet} from {@code getOrderById()} method instance
-     *                      encapsulating data of User.
+     *                  encapsulating data of User.
      * @return {@code User} from ResultSet.
+     * @throws SQLException when persist DB fails
      */
     private User getUserFromResultSet(ResultSet resultSet) throws SQLException {
 

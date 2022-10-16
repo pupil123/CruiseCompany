@@ -17,7 +17,7 @@ import java.sql.SQLException;
 
 public class UpdateShipCommand implements Command {
     private final ShipService SERVICE;
-    private static final Logger LOGGER =  LogManager.getLogger(UpdateShipCommand.class);
+    private static final Logger LOGGER = LogManager.getLogger(UpdateShipCommand.class);
 
     public UpdateShipCommand(ShipService service) {
         this.SERVICE = service;
@@ -40,7 +40,7 @@ public class UpdateShipCommand implements Command {
             Ship ship = getShipFromRequest(request);
 
             SERVICE.updateShip(ship);
-            LOGGER.info("Ship N "+ship.getId()+" is updated");
+            LOGGER.info("Ship N " + ship.getId() + " is updated");
 
         } catch (SQLException | IOException e) {
             LOGGER.error("Ship can't be updated");
@@ -52,9 +52,11 @@ public class UpdateShipCommand implements Command {
     }
 
     /**
-     * Receives request gets builds Cruise from it.
+     * Receives request gets builds Ship from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @throws IOException when process request or respond fails
+     * @return {@code Ship} from request
      */
     private Ship getShipFromRequest(HttpServletRequest request) throws IOException {
 

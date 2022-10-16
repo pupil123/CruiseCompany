@@ -76,6 +76,8 @@ public class AddNewShipCommand implements Command {
      * Receives request gets builds ship from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @return instance of {@code Ship} class entity
+     * @throws IOException when process request or respond fails
      */
     private Ship getShipFromRequest(HttpServletRequest request) throws IOException {
 

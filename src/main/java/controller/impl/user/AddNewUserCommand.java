@@ -82,13 +82,13 @@ public class AddNewUserCommand implements Command {
                 try {
                     if (lang.equals("Ukr")) {
                         String s1 = "Ваш логін та пароль повинні мати мінімум 5 знаків " + "\n" +
-                                   " пройдіть реєстрацію або авторизацію знову";
+                                " пройдіть реєстрацію або авторизацію знову";
                         byte[] barr = s1.getBytes();
                         ServletOutputStream out = response.getOutputStream();
                         out.write(barr);
                     } else if (lang.equals("Eng"))
                         response.getWriter().println("Your login and password should be min 5 characters long," + "\n" +
-                                                     "go to registration or authorise again");
+                                "go to registration or authorise again");
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
@@ -112,9 +112,11 @@ public class AddNewUserCommand implements Command {
     }
 
     /**
-     * Receives request gets builds ship from it.
+     * Receives request gets builds user from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @throws IOException when process request or respond fails
+     * @return instance {@code User} class from rtequest
      */
     private User getUserFromRequest(HttpServletRequest request) throws IOException {
 

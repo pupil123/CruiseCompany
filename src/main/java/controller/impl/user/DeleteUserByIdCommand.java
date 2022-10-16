@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 public class DeleteUserByIdCommand implements Command {
     private final UserService SERVICE;
-    private static final Logger LOGGER =  LogManager.getLogger(DeleteUserByIdCommand.class);
+    private static final Logger LOGGER = LogManager.getLogger(DeleteUserByIdCommand.class);
 
     public DeleteUserByIdCommand(UserService service) {
         this.SERVICE = service;
@@ -37,8 +37,8 @@ public class DeleteUserByIdCommand implements Command {
             int userId = getUserIdFromRequest(request);
 
             SERVICE.deleteUserById(userId);
-            LOGGER.info("User N "+userId+" is deleted");
-        } catch (SQLException | IOException e) {
+            LOGGER.info("User N " + userId + " is deleted");
+        } catch (SQLException e) {
             LOGGER.error("User can't be deleted");
             response.setStatus(406);
             return;
@@ -51,8 +51,9 @@ public class DeleteUserByIdCommand implements Command {
      * Receives request gets  CruiseId from it.
      *
      * @param request {@code HttpServletRequest} from {@code FrontControllerServlet} servlet
+     * @return user's Id {@code int} from request
      */
-    private int getUserIdFromRequest(HttpServletRequest request) throws IOException {
+    private int getUserIdFromRequest(HttpServletRequest request) {
 
         String userId = request.getParameter("user_id");
 

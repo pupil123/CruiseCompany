@@ -1,4 +1,3 @@
-
 <%@ page import="service.impl.CruiseServiceImpl" %>
 <%@ page import="dao.impl.CruiseDAOImpl" %>
 
@@ -25,7 +24,7 @@
 <div align="center">
     <h2>Оберіть маршрут круїзу</h2>
 
-        <form action="http://localhost:9999/filter/order" method="post">
+    <form action="http://localhost:9999/filter/order" method="post">
         Оберіть маршрут:&nbsp;
         <select name="cruiseRoute">
             <c:forEach items="${cruiseList}" var="cruise">
@@ -33,9 +32,9 @@
                 <option value="${cruise.getId()}">${cruise.getRoute()} by ship ${cruise.getShipId()}</option>
             </c:forEach>
         </select>
-        <input type="hidden" name="startdate" value=<%=request.getAttribute("startdate")%>>
-        <input type="hidden" name="userId" value=<%=request.getAttribute("userId")%>>
-        <input type="hidden" name="Lang" value=<%=request.getAttribute("Lang")%>>
+        <input type="hidden" name="startdate" value="${startdate}">
+        <input type="hidden" name="userId" value="${userId}">
+        <input type="hidden" name="Lang" value="${Lang}">
         <br/><br/>
 
         <%-- <%request.setAttribute("startdate",request.getAttribute("startdate"));%>--%>
