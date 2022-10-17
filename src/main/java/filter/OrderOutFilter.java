@@ -50,7 +50,7 @@ public class OrderOutFilter implements Filter {
     @Override
     public void doFilter(final ServletRequest request,
                          final ServletResponse response,
-                         final FilterChain filterChain) throws IOException, ServletException {
+                         final FilterChain filterChain) throws IOException {
 
         request.setCharacterEncoding("UTF-8");
         // filterChain.doFilter(request, response);
@@ -78,12 +78,6 @@ public class OrderOutFilter implements Filter {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-       /* response.getWriter().println("Order N" + newOrderId + "\n" +
-                "First Name : " + userId1.getFirstName() + "\n" +
-                "Last Name : " + userId1.getLastName() + "\n" +
-                "Start date : " + cruiseId1.getStartDate().toString() + "\n" +
-                "Route : " + cruiseId1.getRoute() + "\n" +
-                "Ship Num : " + cruiseId1.getShipId());*/
 
         String orderInfo = "Order N" + newOrderId + "\n" +
                 "First Name : " + userId1.getFirstName() + "\n" +
