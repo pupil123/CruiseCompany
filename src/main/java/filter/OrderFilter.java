@@ -99,11 +99,6 @@ public class OrderFilter implements Filter {
 
                 if (numOrdersNew == numOrders + 1) {
 
-                    //       request.setAttribute("successAdd", successAdd);
-                    //       request.setAttribute("newOrderId", newOrderId);
-                    //    request.getServletContext().getRequestDispatcher("/display/addorder").forward(request, response);;}
-
-
                     //   res.sendRedirect("/filter/order/out?newOrderId=" + newOrderId);
                     Cruise cruise = CRUISE_SERVICE.getCruiseById(cr);
                     req.getSession().setAttribute("cruise", cruise);
@@ -116,15 +111,6 @@ public class OrderFilter implements Filter {
                     //res.sendRedirect("/OrderPage.jsp?order=" + order + "&cruise=" + cruise);
                 }
 
-               /* Order orderById = ORDER_SERVICE.getOrderById(newOrderId);
-                User userId1 = USER_SERVICE.getUserById(orderById.getUserId());
-                Cruise cruiseId1 = CRUISE_SERVICE.getCruiseById(orderById.getCruiseId());
-                response.getWriter().println("Order N" + newOrderId + "\n" +
-                        "First Name : " + userId1.getFirstName() + "\n" +
-                        "Last Name : " + userId1.getLastName() + "\n" +
-                        "Start date : " + cruiseId1.getStartDate().toString() + "\n" +
-                        "Route : " + cruiseId1.getRoute() + "\n" +
-                        "Ship Num : " + cruiseId1.getShipId()); */
             } else {
                 LOGGER.info("All tickets to cruise " + cr + " are sold out");
                 if (lang.equals("Ukr")) {
@@ -150,7 +136,7 @@ public class OrderFilter implements Filter {
     }
 
 
-    private LocalDate getLocalDateFromRequest(HttpServletRequest request) throws IOException {
+    private LocalDate getLocalDateFromRequest(HttpServletRequest request)  {
 
         String localDateString = request.getParameter("startdate");
         return LocalDate.parse(localDateString);
