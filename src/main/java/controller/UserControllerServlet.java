@@ -42,7 +42,7 @@ public class UserControllerServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //commandProcess(request, response);
+
     /*    CruiseServiceImpl dao = new CruiseServiceImpl(new CruiseDAOImpl());
         List<Cruise> listCategory = dao.getAllCruises();
         request.setAttribute("listCategory", listCategory);*/
@@ -70,7 +70,7 @@ public class UserControllerServlet extends HttpServlet {
      * @param response HttpServletResponse
      */
     @Override
-    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws  IOException {
         commandProcess(request, response);
     }
 
@@ -142,7 +142,7 @@ public class UserControllerServlet extends HttpServlet {
     }
 
     @Override
-    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
         commandProcess(request, response);
     }
 
@@ -168,8 +168,8 @@ public class UserControllerServlet extends HttpServlet {
     private LocalDate getLocalDateFromRequest(HttpServletRequest request) {
 
         String localDateString = request.getParameter("startdate");
-        LocalDate localDate = LocalDate.parse(localDateString);
-        return localDate;
+       // LocalDate localDate = LocalDate.parse(localDateString);
+        return LocalDate.parse(localDateString);
     }
 
     private int getPeriodFromRequest(HttpServletRequest request) {
