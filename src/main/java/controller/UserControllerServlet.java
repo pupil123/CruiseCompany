@@ -43,9 +43,6 @@ public class UserControllerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    /*    CruiseServiceImpl dao = new CruiseServiceImpl(new CruiseDAOImpl());
-        List<Cruise> listCategory = dao.getAllCruises();
-        request.setAttribute("listCategory", listCategory);*/
         request.getServletContext().getRequestDispatcher("/user_page.jsp").forward(request, response);
         //  listCategory(request, response);
 
